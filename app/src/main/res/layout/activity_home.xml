@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_200dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/app_name"
+            android:textSize="48sp"
+            android:textStyle="bold"/>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_new_game"
+            style="@style/HomeBtn"
+            android:layout_width="@dimen/common_180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/new_game"/>
+
+        <Button
+            android:id="@+id/btn_best_score"
+            style="@style/HomeBtn"
+            android:layout_width="@dimen/common_180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/best_score"/>
+
+
+        <Button
+            android:id="@+id/btn_quit"
+            style="@style/HomeBtn"
+            android:layout_width="@dimen/common_180dp"
+            android:layout_height="wrap_content"
+            android:text="@string/quit"/>
+    </LinearLayout>
+
+    <include layout="@layout/layout_ads"/>
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.cpxiao.minigame.library.views;//package com.cpxiao.minigame.library.views;
+package com.cpxiao.infiniteloop.utils;
 
 import android.content.Context;
 import android.content.DialogInterface;

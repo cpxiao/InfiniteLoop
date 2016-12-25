@@ -1,4 +1,4 @@
-package com.cpxiao.infiniteloop;
+package com.cpxiao.infiniteloop.views;
 
 import android.content.Context;
 import android.graphics.Paint;
@@ -6,7 +6,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.cpxiao.minigame.library.views.BaseSurfaceViewFPS;
+import com.cpxiao.infiniteloop.R;
+import com.cpxiao.infiniteloop.imps.OnGameListener;
 
 import java.util.Random;
 
@@ -45,11 +46,6 @@ public class InfiniteLoopView extends BaseSurfaceViewFPS implements View.OnClick
         super(context);
         initScore(score);
         init();
-    }
-
-    public void reset(int score) {
-        initScore(score);
-        initWidget();
     }
 
     private void initScore(int score) {
@@ -236,7 +232,7 @@ public class InfiniteLoopView extends BaseSurfaceViewFPS implements View.OnClick
             return;
         }
         mSelfCircle.r = mBigCircleArray[mIndex].r;
-        mSelfCircle.loopSpeed = (int) (0.6 * mBigCircleArray[mIndex].loopSpeed);
+        mSelfCircle.loopSpeed = (int) (0.6f * mBigCircleArray[mIndex].loopSpeed);
         mSelfCircle.mSmallCircleArray[0].r = mBigCircleArray[mIndex].mSmallCircleArray[0].r;
 
     }

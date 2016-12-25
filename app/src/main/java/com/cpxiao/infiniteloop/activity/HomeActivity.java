@@ -8,10 +8,8 @@ import android.widget.Button;
 
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
 import com.cpxiao.infiniteloop.R;
-import com.cpxiao.minigame.ads.ZAdManager;
-import com.cpxiao.minigame.ads.core.ZAdPosition;
-import com.cpxiao.minigame.library.Extra;
-import com.cpxiao.minigame.library.activity.BaseActivity;
+import com.cpxiao.infiniteloop.mode.Extra;
+import com.cpxiao.lib.activity.BaseActivity;
 
 /**
  * HomeActivity
@@ -30,20 +28,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
         setContentView(R.layout.activity_home);
 
         initWidget();
-
-        ZAdManager.getInstance().init(getApplicationContext());
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        initSmallAds(getApplicationContext(), ZAdPosition.POSITION_HOME_ACTIVITY);
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        ZAdManager.getInstance().destroyAll();
+        initFbAds50("1579509002351231_1579509065684558");
     }
 
     protected void initWidget() {

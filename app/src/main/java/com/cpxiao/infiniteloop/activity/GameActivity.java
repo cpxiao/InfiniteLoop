@@ -9,13 +9,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
-import com.cpxiao.infiniteloop.InfiniteLoopView;
-import com.cpxiao.infiniteloop.OnGameListener;
 import com.cpxiao.infiniteloop.R;
-import com.cpxiao.minigame.ads.core.ZAdPosition;
-import com.cpxiao.minigame.library.Extra;
-import com.cpxiao.minigame.library.activity.BaseActivity;
-import com.cpxiao.minigame.library.views.DialogUtils;
+import com.cpxiao.infiniteloop.imps.OnGameListener;
+import com.cpxiao.infiniteloop.mode.Extra;
+import com.cpxiao.infiniteloop.utils.DialogUtils;
+import com.cpxiao.infiniteloop.views.InfiniteLoopView;
+import com.cpxiao.lib.activity.BaseActivity;
 
 /**
  * GameActivity
@@ -56,12 +55,7 @@ public class GameActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         initWidget();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        initSmallAds(getApplicationContext(), ZAdPosition.POSITION_GAME_ACTIVITY);
+        initFbAds50("1579509002351231_1579509275684537");
     }
 
     protected void initWidget() {

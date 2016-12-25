@@ -1,4 +1,4 @@
-package com.cpxiao.minigame.library.views;//package com.cpxiao.minigame.library.views;
+package com.cpxiao.infiniteloop.views;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -10,7 +10,7 @@ import android.util.Log;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-import com.cpxiao.minigame.library.Config;
+import com.cpxiao.lib.Config;
 
 
 /**

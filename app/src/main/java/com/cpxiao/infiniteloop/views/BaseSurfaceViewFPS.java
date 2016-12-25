@@ -1,9 +1,11 @@
-package com.cpxiao.minigame.library.views;//package com.cpxiao.minigame.library.views;
+package com.cpxiao.infiniteloop.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
+
+import com.cpxiao.lib.Config;
 
 /**
  * BaseSurfaceViewFPS
@@ -11,7 +13,6 @@ import android.view.SurfaceHolder;
  * @author cpxiao on 2016/8/23
  */
 public abstract class BaseSurfaceViewFPS extends BaseSurfaceView implements Runnable {
-
     /**
      * 声明一个线程
      */
@@ -58,7 +59,9 @@ public abstract class BaseSurfaceViewFPS extends BaseSurfaceView implements Runn
 
     @Override
     public void run() {
-        Log.d(TAG, "run: ");
+        if (DEBUG) {
+            Log.d(TAG, "run: ");
+        }
         while (isRunning) {
             synchronized (BaseSurfaceViewFPS.class.getSimpleName()) {
                 int deltaTime = 1000 / mFPS;

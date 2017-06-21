@@ -4,17 +4,18 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
+import com.cpxiao.gamelib.activity.BaseActivity;
 import com.cpxiao.infiniteloop.R;
 import com.cpxiao.infiniteloop.imps.OnGameListener;
 import com.cpxiao.infiniteloop.mode.Extra;
-import com.cpxiao.infiniteloop.utils.DialogUtils;
 import com.cpxiao.infiniteloop.views.InfiniteLoopView;
-import com.cpxiao.lib.activity.BaseActivity;
+
 
 /**
  * GameActivity
@@ -94,19 +95,26 @@ public class GameActivity extends BaseActivity {
                         return;
                     }
 
-                    DialogUtils.createGameOverDialog(GameActivity.this,
-                            new DialogInterface.OnClickListener() {
+                    AlertDialog dialog = new AlertDialog.Builder(GameActivity.this)
+                            .setTitle(getString(R.string.game_over))
+                            .setMessage(getString(R.string.play_again))
+                            .setPositiveButton(getString(R.string.ok), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     GameActivity.comeToMe(GameActivity.this);
                                 }
-                            },
-                            new DialogInterface.OnClickListener() {
+                            })
+                            .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
                                     finish();
                                 }
-                            });
+                            }).create();
+                    dialog.setCanceledOnTouchOutside(false);
+                    dialog.setCancelable(false);
+                    dialog.show();
+
+
                 }
             });
 

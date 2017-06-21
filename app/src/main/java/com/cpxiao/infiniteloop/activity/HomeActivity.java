@@ -7,9 +7,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
-import com.cpxiao.infiniteloop.R;
+import com.cpxiao.gamelib.activity.BaseActivity;
 import com.cpxiao.infiniteloop.mode.Extra;
-import com.cpxiao.lib.activity.BaseActivity;
+
+import com.cpxiao.infiniteloop.R;
+
 
 /**
  * HomeActivity

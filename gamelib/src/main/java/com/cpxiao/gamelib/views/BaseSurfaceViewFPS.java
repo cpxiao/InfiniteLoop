@@ -1,11 +1,10 @@
-package com.cpxiao.infiniteloop.views;
+package com.cpxiao.gamelib.views;
 
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
-import com.cpxiao.lib.Config;
 
 /**
  * BaseSurfaceViewFPS

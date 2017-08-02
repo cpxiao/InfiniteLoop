@@ -9,4 +9,6 @@
     <string name="play_again">Play Again ?</string>
     <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
+
+    <string name="quit_msg">Are you sure to quit the game?</string>
 </resources>

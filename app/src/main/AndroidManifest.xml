@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.cpxiao.infiniteloop"
+<manifest package="com.cpxiao"
           xmlns:android="http://schemas.android.com/apk/res/android">
 
     <!--facebook ad start-->
@@ -23,7 +23,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight.NoActionBar">
         <activity
-            android:name=".activity.HomeActivity"
+            android:name=".infiniteloop.activity.HomeActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -33,7 +33,7 @@
         </activity>
 
         <activity
-            android:name=".activity.GameActivity"
+            android:name=".infiniteloop.activity.GameActivity"
             android:screenOrientation="portrait"/>
 
         <meta-data

@@ -3,7 +3,7 @@ apply plugin: 'com.jakewharton.hugo'
 //apply plugin: 'com.antfortune.freeline'
 
 android {
-    compileSdkVersion 23
+    compileSdkVersion 25
     buildToolsVersion '25.0.2'
 
     defaultConfig {
@@ -11,8 +11,8 @@ android {
 
         minSdkVersion 9
         targetSdkVersion 23
-        versionCode 110
-        versionName "1.1.0"
+        versionCode 112
+        versionName "1.1.2"
     }
     buildTypes {
         release {
@@ -62,9 +62,21 @@ android {
 
 dependencies {
     compile project(':AndroidUtils:library')
-    compile project(':gamelib')
-    compile 'com.android.support:appcompat-v7:23.0.1'
-//    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    /**
+     * Ads Start
+     */
+    //友盟统计
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    //Facebook广告
+    compile files('libs/AudienceNetwork_v4.7.jar')
+    //AdMob广告
+    compile 'com.google.firebase:firebase-ads:9.4.0'
+    /**
+     * Ads End
+     */
+
 }
 
 apply plugin: 'com.google.gms.google-services'

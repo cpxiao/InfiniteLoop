@@ -6,8 +6,8 @@ import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.cpxiao.R;
 import com.cpxiao.gamelib.views.BaseSurfaceViewFPS;
-import com.cpxiao.infiniteloop.R;
 import com.cpxiao.infiniteloop.imps.OnGameListener;
 
 import java.util.Random;

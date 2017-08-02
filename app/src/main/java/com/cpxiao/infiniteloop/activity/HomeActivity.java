@@ -1,16 +1,17 @@
 package com.cpxiao.infiniteloop.activity;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.cpxiao.R;
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
 import com.cpxiao.gamelib.activity.BaseActivity;
 import com.cpxiao.infiniteloop.mode.Extra;
 
-import com.cpxiao.infiniteloop.R;
 
 
 /**
@@ -31,6 +32,7 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
 
         initWidget();
         initFbAds50("1579509002351231_1579509065684558");
+        initAdMobAds50("ca-app-pub-4157365005379790/1737248065");
     }
 
     protected void initWidget() {
@@ -66,7 +68,34 @@ public class HomeActivity extends BaseActivity implements View.OnClickListener {
                     .create();
             dialog.show();
         } else if (id == R.id.btn_quit) {
-            finish();
+            showQuitConfirmDialog();
         }
+    }
+    @Override
+    public void onBackPressed() {
+        //        super.onBackPressed();
+        showQuitConfirmDialog();
+    }
+
+    private void showQuitConfirmDialog() {
+        Dialog dialog = new AlertDialog.Builder(this)
+                //                .setTitle(R.string.quit_msg)
+                .setMessage(R.string.quit_msg)
+                .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                        finish();
+                    }
+                }).setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();
+                    }
+                })
+                .create();
+        //            dialog.setCancelable(true);
+        //            dialog.setCanceledOnTouchOutside(true);
+        dialog.show();
     }
 }

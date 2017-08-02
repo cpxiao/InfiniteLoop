@@ -9,8 +9,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.LinearLayout;
 
+import com.cpxiao.R;
 import com.cpxiao.gamelib.Config;
-import com.cpxiao.gamelib.R;
 import com.facebook.ads.Ad;
 import com.facebook.ads.AdError;
 import com.facebook.ads.AdListener;
@@ -26,13 +26,11 @@ import java.util.List;
 
 /**
  * @author cpxiao on 2017/3/1.
- * @version 2017/3/17更新打印log信息
- * @version 2017/4/17extends AppCompatActivity
  * @version 2017/4/20修改test devices
  */
 public class BaseActivity extends Activity {
     protected static final boolean DEBUG = Config.DEBUG;
-    protected final String TAG = "CPXIAO--" + getClass().getSimpleName();
+    protected final String TAG = getClass().getSimpleName();
 
     protected AdView mFbAdView;
     protected com.google.android.gms.ads.AdView mAdMobAdView;
@@ -45,8 +43,7 @@ public class BaseActivity extends Activity {
         requestWindowFeature(Window.FEATURE_NO_TITLE);
 
         //隐藏状态栏部分（电池电量、时间等部分）
-//        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
     }
 
@@ -55,6 +52,7 @@ public class BaseActivity extends Activity {
         super.onResume();
         MobclickAgent.onResume(this);
     }
+
     @Override
     protected void onPause() {
         super.onPause();
@@ -64,9 +62,6 @@ public class BaseActivity extends Activity {
 
     @Override
     protected void onDestroy() {
-        if (DEBUG) {
-            Log.d(TAG, "onDestroy: ");
-        }
         if (mFbAdView != null) {
             mFbAdView.destroy();
             mFbAdView = null;
@@ -229,9 +224,6 @@ public class BaseActivity extends Activity {
     }
 
     private void addToLayout(View view) {
-        if (DEBUG) {
-            Log.d(TAG, "addToLayout: ");
-        }
         if (view == null) {
             return;
         }

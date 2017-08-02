@@ -9,9 +9,9 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cpxiao.R;
 import com.cpxiao.androidutils.library.utils.PreferencesUtils;
 import com.cpxiao.gamelib.activity.BaseActivity;
-import com.cpxiao.infiniteloop.R;
 import com.cpxiao.infiniteloop.imps.OnGameListener;
 import com.cpxiao.infiniteloop.mode.Extra;
 import com.cpxiao.infiniteloop.views.InfiniteLoopView;
@@ -57,6 +57,7 @@ public class GameActivity extends BaseActivity {
         setContentView(R.layout.activity_game);
         initWidget();
         initFbAds50("1579509002351231_1579509275684537");
+        initAdMobAds50("ca-app-pub-4157365005379790/3476602460");
     }
 
     protected void initWidget() {
